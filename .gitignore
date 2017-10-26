@@ -1,0 +1,5 @@
+# ignore user vscode workspace settings
+.vscode
+
+# Others
+node_modules/

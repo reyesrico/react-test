@@ -1,0 +1,60 @@
+.page {
+    display: inline-block;
+    width: 100%;
+}
+
+.menu {
+    float: left;
+    width: 30%;
+}
+
+.item {
+    background-color: rgb(169,169,169);
+    display: block;
+    font-family: "SegoeUI", sans-serif;
+    font-size: 15px;
+    margin-bottom: 8px;        
+}
+
+.content {
+    background-color: yellow;
+    float: right;
+    width: 70%;
+}
+
+.space {
+    background-color: gray;
+    display: inline-block;
+    height: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.square {
+    background-color: blue;
+    display: inline-block;        
+    height: 30px;
+    width: 30px;
+}
+
+.green {
+    background-color: green;
+    display: inline-block;        
+    height: 30px;
+    width: 30px;
+}
+
+.red {
+    background-color: red;
+    display: inline-block;    
+    height: 30px;
+    width: 30px;
+}
+
+.yellow {
+    background-color: yellow;
+    display: inline-block;    
+    height: 30px;
+    width: 30px;
+}

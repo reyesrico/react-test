@@ -16,10 +16,40 @@
     margin-bottom: 8px;        
 }
 
-.content {
+.content-yellow {
     background-color: yellow;
     float: right;
     width: 70%;
+}
+
+.content-red {
+    background-color: red;
+    float: right;
+    width: 70%;
+}
+
+.content-black{
+    background-color: black;
+    float: right;
+    width: 70%;    
+}
+
+.content-green{
+    background-color: green;
+    float: right;
+    width: 70%;    
+}
+
+.content-purple{
+    background-color: purple;
+    float: right;
+    width: 70%;   
+}
+
+.content-cyan{
+    background-color: cyan;
+    float: right;
+    width: 70%;    
 }
 
 .space {

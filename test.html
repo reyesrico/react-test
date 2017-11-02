@@ -23,6 +23,16 @@
         <script>            
             document.write("merol!");
 
+            var my_null;
+            if(my_null == null){
+                document.write("is null");
+            }
+
+            var other_null;
+            if(other_null === undefined){
+                document.write("is undefined");
+            }
+
             var i = 0;
             function timeout_loop() {
                 setTimeout(() => {

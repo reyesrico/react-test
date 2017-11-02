@@ -3,20 +3,80 @@
         <style>
             .one {background-color: powderblue; color: blue;}
             .two {background-color: lightgrey; color: red;}
+            .three{font-weight: bold;}
         </style>
     </head>
 
     <body>
         <h2>title page</h2>
         
-        <p id="one" class="one">
+        <p id="one" class="one three">
             This is cool!
         </p>
+
+        <p class="three">
+            This is NOT cool!
+        </p>
+
+        <button onClick="changeBtnTxt(this)" onmouseover="changeBG(this)" onmouseout="changeBG(this)" flag="1">Change this text</button>
 
         <script>            
             document.write("merol!");
 
-            document.getElementById('one').style = ".two";            
+            var i = 0;
+            function timeout_loop() {
+                setTimeout(() => {
+                    var p  = document.getElementById("one");
+                    if(p.className.indexOf("one") >= 0){
+                        p.className = "two three";
+                    }
+                    else{
+                        p.className = "one three";                        
+                    }                    
+                    i++;
+                    if (i < 3) {
+                        timeout_loop();
+                    }
+                }, 3000);
+            };
+
+            timeout_loop();
+
+            //Ask Dan how to use style?
+            document.getElementById('one').style = ".two";  
+
+            //How to pass this?
+            document.querySelectorAll('h2')[0].addEventListener('click', () => {
+                var h2  = document.querySelectorAll('h2')[0];
+                if(h2.style.backgroundColor == "cyan"){
+                    h2.style.backgroundColor = "blue";
+                }
+                else{
+                    h2.style.backgroundColor = "cyan";
+                }
+            });
+            //alert(document.querySelectorAll('p.three').length);
+
+            function changeBtnTxt(btn){
+                if(btn.getAttribute('flag') == "1"){
+                    btn.innerHTML = "Change text to this";
+                    btn.setAttribute('flag', '0');
+                } 
+                else{
+                    btn.innerHTML = "Change this text";
+                    btn.setAttribute('flag', '1');                                        
+                }
+            }
+
+            function changeBG(btn){
+                if(btn.style.backgroundColor == "red"){
+                    btn.style.backgroundColor = "yellow";
+                    timeout_loop();
+                }
+                else{
+                    btn.style.backgroundColor = "red";
+                }
+            }
         </script>        
     </body>
 </html>

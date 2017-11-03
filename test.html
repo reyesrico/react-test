@@ -10,17 +10,28 @@
     <body>
         <h2>title page</h2>
         
-        <p id="one" class="one three">
+        <p id="one" class="one three" tabindex="0">
             This is cool!
         </p>
 
-        <p class="three">
+        <p class="three" tabindex="0">
             This is NOT cool!
         </p>
         <hr>
         <button onClick="changeBtnTxt(this)" onmouseover="changeBG(this)" onmouseout="changeBG(this)" flag="1">Change this text</button>
+        <hr>
+        <button>Get Promise</button>
+        <hr>
+        <button onClick="test_proto()">Other</button>
+        <hr>
+        <button onClick="test()">Other 2</button>        
+        <hr>
+        <div id="div_clickable" tabindex="-1">Div Clickable</button>                
+        <script>
+            
+            var div = document.getElementById('div_clickable');
+            div.focus();
 
-        <script>            
             document.write("merol!");
 
             var my_null;
@@ -56,8 +67,8 @@
             document.getElementById('one').style = ".two";  
 
             //How to pass this?
-            document.querySelectorAll('h2')[0].addEventListener('click', () => {
-                var h2  = document.querySelectorAll('h2')[0];
+            var h2 = document.querySelectorAll('h2')[0]; 
+            h2.addEventListener('click', () => {
                 if(h2.style.backgroundColor == "cyan"){
                     h2.style.backgroundColor = "blue";
                 }
@@ -87,6 +98,126 @@
                     btn.style.backgroundColor = "red";
                 }
             }
+
+            var promise_btn = document.querySelectorAll('button')[1];
+            promise_btn.addEventListener('click', promisefn);
+            
+            var promise_data = new Promise( 
+                (resolve, reject) => {
+                    var resolve_obj = {
+                        val1: "stuff",
+                        val2: "foo"
+                    };
+                    if(document.querySelectorAll('h2')[0].style.backgroundColor !== "cyan"){
+                        resolve(resolve_obj);
+                    }
+                    else{
+                        alert("color: "+  h2.style.backgroundColor);
+                        reject(new Error('h2.style.backgroundColor is cyan'));
+                    }
+            });
+
+            function promisefn(){
+                promise_data.then((obj) => {
+                    alert(`${obj.val1} ${obj.val2}`);
+                }).catch((error) => {
+                    alert(error.message);
+                });
+            }
+
+
+            function Person(first, last, age, eyecolor) {
+                this.firstName = first;
+                this.lastName = last;
+                this.age = age;
+                this.eyeColor = eyecolor;
+            }
+
+            var p = new Person("Carlos", "Reyes", 34, "brown");
+            p.name = function (){
+                return this.firstName + this.lastName;
+            };
+
+
+            class Polygon {
+                constructor(x, y){
+                    this.x = x;
+                    this.y = y;
+                }
+            }
+
+            class Square extends Polygon{
+                constructor(side){
+                    super(side, side);
+                }
+
+                get area(){
+                    return this.x * this.y;
+                }
+
+                set sideLength(l){
+                    this.x = l;
+                    this.y = l;
+                }
+            }
+            
+
+            function test_proto(){
+                var o = {
+                    a: 1,
+                    b: 2
+                };
+                o.prototype = {b: 3, c: 4};
+                o.prototype.prototype = null;
+                
+                console.log(o.a); // 1
+                
+                console.log(o.b); // 2
+                
+                console.log(o.c); // 4
+                
+                console.log(o.d); // undefined        
+                
+                console.log(p.name());
+
+                var s = new Square(2);
+                var x = s.area;
+                s.sideLength = 5;
+                var y = s.area;
+                console.log(x + " " + y);
+            }
+
+
+
+            function Person(first, last, age, interests){
+                this.name = { first, last };
+                this.age = age;
+                this.interests = interests;
+            }
+
+            Person.prototype.greeting = function(){
+                alert(`Hello I am ${name.first}.`);                
+            }
+
+            function Teacher(first, last, age, gender, interests, subject){
+                Person.call(this, first, last, age, gender, interests);
+                this.subject = subject;
+            }
+
+            Teacher.prototype.sciencetopic = "something";
+
+            var scienceTeacher = new Teacher("D", "M", 66, "equis", "subject");
+            scienceTeacher.sciencetopic = "something";
+
+            function test(){
+                console.log(scienceTeacher.sciencetopic + ' ' + scienceTeacher.greeting);
+            }
+            /*
+            function ScienceTeacher(first, last, age, gender, interests, subject, scienceTopic){
+                Teacher(this, first, last, age, gender, interests, subject);
+                this.scienceTopic = scienceTopic;
+            }*/
+
         </script>        
     </body>
 </html>

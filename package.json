@@ -1,15 +1,36 @@
 {
   "name": "test",
   "version": "1.0.0",
-  "description": "",
+  "description": "node_modules\\.bin\\webpack -d",
   "main": "animation.js",
   "scripts": {
+    "build": "node_modules\\.bin\\webpack -d",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server -p 8000"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "npm": "^6.10.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "webpack": "^3.8.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reyesrico/react-test.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/reyesrico/react-test/issues"
+  },
+  "homepage": "https://github.com/reyesrico/react-test#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-es2015": "^6.24.1",

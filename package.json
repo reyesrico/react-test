@@ -35,6 +35,7 @@
     "babel-preset-react": "^6.24.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "set-value": "^4.1.0",
     "webpack": "^3.12.0",
     "y18n": "^3.2.1"
   }

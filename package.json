@@ -16,7 +16,7 @@
     "babel-preset-react": "^6.24.1",
     "lodash": "^4.17.21",
     "minimist": "^1.2.5",
-    "npm": "^6.10.0"
+    "npm": "^10.9.4"
   },
   "repository": {
     "type": "git",

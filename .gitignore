@@ -1,5 +1,8 @@
 # ignore user vscode workspace settings
 .vscode
 
+# Build artifacts
+build/
+
 # Others
 node_modules/

@@ -4,7 +4,7 @@
   "description": "node_modules\\.bin\\webpack -d",
   "main": "animation.js",
   "scripts": {
-    "build": "node_modules\\.bin\\webpack -d",
+    "build": "webpack -d",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "http-server -p 8000"
   },
@@ -16,7 +16,7 @@
     "babel-preset-react": "^6.24.1",
     "lodash": "^4.17.21",
     "minimist": "^1.2.5",
-    "npm": "^10.9.4"
+    "npm": "^11.7.0"
   },
   "repository": {
     "type": "git",

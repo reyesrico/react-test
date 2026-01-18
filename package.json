@@ -27,6 +27,9 @@
     "url": "https://github.com/reyesrico/react-test/issues"
   },
   "homepage": "https://github.com/reyesrico/react-test#readme",
+  "overrides": {
+    "tar": "^7.5.3"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
@@ -40,6 +43,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "set-value": "^4.1.0",
+    "tar": "^7.5.3",
     "webpack": "^3.12.0",
     "y18n": "^3.2.2"
   }

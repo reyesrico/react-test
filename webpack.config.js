@@ -1,24 +1,21 @@
-var webpack = require('webpack');
-var path = require('path');
+const path = require('path');
 
-var BUILD_DIR = path.resolve(__dirname, 'build');
-var APP_DIR = path.resolve(__dirname, 'components');
+const BUILD_DIR = path.resolve(__dirname, 'build');
+const APP_DIR = path.resolve(__dirname, 'components');
 
-var config = {
-  entry: APP_DIR + '/MainPage.jsx',
+module.exports = {
+  entry: `${APP_DIR}/MainPage.jsx`,
   output: {
     path: BUILD_DIR,
     filename: 'bundlex.js'
   },
-  module : {
-    loaders : [
+  module: {
+    rules: [
       {
-        test : /\.jsx?/,
-        include : APP_DIR,
-        loader : 'babel-loader'
+        test: /\.jsx?$/,
+        include: APP_DIR,
+        use: 'babel-loader'
       }
     ]
-  }  
+  }
 };
-
-module.exports = config;

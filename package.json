@@ -35,7 +35,7 @@
       "braces": ">=3.0.3"
     },
     "babel-core": {
-      "json5": ">=1.0.2"
+      "json5": "^1.0.2"
     }
   },
   "devDependencies": {

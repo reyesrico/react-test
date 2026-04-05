@@ -3,6 +3,7 @@
 
 # Build artifacts
 build/
+dist/
 
 # Others
 node_modules/

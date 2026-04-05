@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import AwesomeComponent from './AwesomeComponent.jsx';
 import FilterableProductTable from './FilterableProductTable.jsx';
 
@@ -24,4 +24,4 @@ class App extends React.Component {
     }
 }
 
-render(<App />, document.getElementById('app'));
+createRoot(document.getElementById('app')).render(<App />);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import BarSection from './BarSection.jsx';
 import MenuSection from './MenuSection.jsx';
 import FeedSection from './FeedSection.jsx'
@@ -16,4 +16,4 @@ class MainPage extends React.Component {
   }
 }
 
-render(<MainPage />, document.getElementById('stuffie'));
+createRoot(document.getElementById('stuffie')).render(<MainPage />);

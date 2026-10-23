@@ -15,8 +15,12 @@ A personal dev sandbox for testing React concepts, JavaScript patterns, and Type
 ## Getting started
 
 ```bash
-npm install
+npm ci
 ```
+
+Use `npm ci` for reproducible installs from the lockfile. Vite 6.4.4 or later
+within the 6.x release line is required for the fixes to CVE-2026-112942,
+CVE-2026-112943, and CVE-2026-112944, without changing Node.js compatibility.
 
 ## Running locally
 

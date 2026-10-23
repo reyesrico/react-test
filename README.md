@@ -18,9 +18,9 @@ A personal dev sandbox for testing React concepts, JavaScript patterns, and Type
 npm ci
 ```
 
-Use `npm ci` for reproducible installs from the lockfile. Vite 6.4.4 or later
-within the 6.x release line is required for the fixes to CVE-2026-112942,
-CVE-2026-112943, and CVE-2026-112944, without changing Node.js compatibility.
+Use Node.js 20.19+ (20.x) or 22.12+ and `npm ci` for reproducible installs
+from the lockfile. The project uses Vite 8.3.5, which includes the fixes for
+CVE-2026-112942, CVE-2026-112943, and CVE-2026-112944.
 
 ## Running locally
 
